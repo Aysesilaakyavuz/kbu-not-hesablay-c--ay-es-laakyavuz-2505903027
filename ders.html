@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KBÜ Not Hesaplayıcı</title>
+  <link rel="stylesheet" href="ders.css">
+</head>
+<body style="background-color: rgb(238, 203, 208);">
+  <main class="container">
+    <h1>KBÜ Not Hesaplayıcı (Vize–Final/Bütünleme)</h1>
+    <p class="info">Yıl içi %40 – Final/Bütünleme %60. Geçmek için: sınav ≥ 50 ve başarı notu ≥ 60.</p>
+
+    <form id="notForm">
+      
+      <label for="vize">Vize / Ara Sınav (0–100)</label>
+      <input type="number" id="vize" min="0" max="100" required>
+      <small class="error" id="err-vize"></small>
+
+      
+      <label for="yilici">Yıl İçi Çalışma Puanı (opsiyonel)</label>
+      <input type="number" id="yilici" min="0" max="100" placeholder="Boş bırakılırsa vize kullanılacak">
+      <small class="error" id="err-yilici"></small>
+
+      
+      <label for="final">Final (0–100)</label>
+      <input type="number" id="final" min="0" max="100">
+      <small class="error" id="err-final"></small>
+
+    
+      <label for="butunleme">Bütünleme (opsiyonel – girilirse final yerine kullanılır)</label>
+      <input type="number" id="butunleme" min="0" max="100">
+      <small class="error" id="err-butunleme"></small>
+
+      
+      <div class="checkbox">
+        <input type="checkbox" id="devamsiz">
+        <label for="devamsiz">Devamsızım (F1)</label>
+      </div>
+
+      <label for="girdi">Genel/Bütünleme sınavına girdim mi?</label>
+      <select id="girdi">
+        <option value="">Seçiniz</option>
+        <option value="evet">Evet</option>
+        <option value="hayir">Hayır</option>
+      </select>
+      <small class="error" id="err-girdi"></small>
+
+      <div class="buttons">
+        <button type="submit" id="hesapla">Hesapla</button>
+        <button type="reset" id="sifirla">Sıfırla</button>
+      </div>
+    </form>
+
+  
+    <section id="sonuc" class="hidden">
+      <h2>Sonuç</h2>
+      <p><strong>Başarı Notu:</strong> <span id="basari">--</span></p>
+      <p><strong>Harf Notu:</strong> <span id="harf">--</span></p>
+      <p><strong>Durum:</strong> <span id="durum">--</span></p>
+      <p><strong>Açıklama:</strong> <span id="aciklama">--</span></p>
+    </section>
+
+    <footer>
+      <p><small>KBÜ Not Hesaplayıcı | JavaScript, HTML, CSS ile hazırlandı</small></p>
+    </footer>
+  </main>
+
+  <script src="ders.js"></script>
+</body>
+</html>
